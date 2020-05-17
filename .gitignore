@@ -3,7 +3,7 @@
 *.log
 *.toc
 *.fls
-*.out
+resume.out
 
 # PDF output - usually a bad idea to keep this in Git
 # *.pdf
