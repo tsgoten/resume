@@ -1,0 +1,227 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Original author:
+% Ganesh Mohan (http://about.me/ganesh.mohan)
+% Contributor: 
+% Tarang Srivastava
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{setspace}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% DEFINITIONS FOR RESUME
+
+\textheight=10in
+\pagestyle{fancy}
+\raggedright
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\hoffset}{-2pt}
+\setlength{\footskip}{20pt}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+\newcommand{\contact}[3]{
+\vspace*{5pt}
+\begin{center}
+{\LARGE \scshape {#1}}\\
+\vspace{3pt}
+#2 
+\vspace{2pt}
+#3
+\end{center}
+\vspace*{-8pt}
+}
+
+\newcommand{\header}[1]{{
+\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} 
+\lineunder
+}
+
+\newcommand{\lineunder}{
+\vspace*{-8pt} \\ \hspace*{-18pt} 
+\hrulefill \\
+}
+
+\newcommand{\content}{
+\vspace*{2pt}%
+}
+
+\newcommand{\school}[5]{\vspace*{2pt}% 
+\textbf{#1} \labelitemi #2 \hfill #3 \\ #4 \hfill #5
+\vspace*{5pt}
+}
+
+\newcommand{\college}[6]{
+\textbf{#1} \labelitemi \textbf{#2} \hfill #3 \\ #4 \hfill #6 \\ #5 \vspace*{5pt}
+}
+
+\newcommand{\employer}[4]{{
+\vspace*{2pt}%
+\textbf{#1} #2 \hfill #3\\ #4 \vspace*{2pt}}
+}
+
+\newcommand{\project}[3]{{
+\vspace*{2pt}% 
+\textbf{#1} #2 \hfill #3\vspace*{2pt}}
+}
+
+\renewcommand{\labelitemi}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{3pt}
+}
+
+\renewcommand{\labelitemii}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{-3pt}
+}
+
+\newenvironment{bullet-list-major}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{3pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+\newenvironment{bullet-list-minor}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{15pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+\cfoot{
+Last updated: July 7, 2018
+}
+
+\rfoot{
+Page $\thepage\hspace*{3pt}\vert\hspace*{3pt}\pageref{LastPage}$
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\contact{Tarang Srivastava}
+{\faPhone\ (609) 665-7567 
+\labelitemi \faEnvelope\ \href{mailto:tarang.sriv@berkeley.edu}{tarang.sriv@berkeley.edu}
+\labelitemi \faLinkedin\ \href{https://www.linkedin.com/in/tarangsriv/}{linkedin.com/in/tarangsriv}
+\labelitemi \faGithub\ \href{https://github.com/tsgoten}{github.com/tsgoten}}%
+
+\vspace{4pt}
+\header{Education}
+    \college{University of California, Berkeley}{Berkeley, CA}{August 2019 -- May 2022}
+    {\textit{Bachelor of Arts \labelitemi Computer Science}}
+    {\textit{Bachelor of Arts \labelitemi Applied Mathematics \& Statistics Concentration}}
+    {GPA: 3.85/4.0}
+
+    \school{South Brunswick High School}{South Brunswick, NJ}{September 2015 -- June 2019}
+    {\labelitemi Outstanding Math Student \labelitemi GSET nomination for Top 3 in class of 700 \labelitemi Honor Roll}
+    {GPA: 4.4}
+
+\vspace*{4pt}%
+\header{Work Experience}
+
+    \employer{Undergraduate Student Instructor (TA)}
+    {-- UC Berkeley EECS Department}{June 2020 -- Present}{Berkeley, CA}
+	\begin{bullet-list-minor}
+	\item TA for CS70: Discrete Mathematics and Probability Theory, a 700 person class covering topics like logic, graph theory, RSA, computability, discrete and continuous probability, Markov chains and more.
+	\item Responsible for heading discussion sections, creating course material and administrating course grading.  
+    \end{bullet-list-minor}
+
+    % \employer{Computer Science Mentor (Tutor)}{-- UC Berkeley CSM}{Aug 2016 -- May 2019}{Berkeley, CA}
+	% \begin{bullet-list-minor}
+	% \item Take, make, cut, and deliver orders to customers.
+	% \item Handle customer complaints, make end of the night deposits, cash register.
+    % \end{bullet-list-minor}
+
+    \employer{Software Engineering Intern}{-- Vydia}{June 2018 -- August 2018}{Holmdel, NJ}
+	\begin{bullet-list-minor}
+	\item Worked on developing and maintaining web and mobile applications for artists and producers.
+	\item Was part of a team of full-stack developers in Agile workflow. 
+	\item Used JS, react and react-native for featur development. Revamped internal DevOp setup with Docker. 
+    \end{bullet-list-minor}
+
+\vspace*{4pt}%
+\header{Projects}
+
+    \project{Math Animations}{ -- YouTube}{May 2020 - Present}
+    \begin{bullet-list-minor}
+    \item Using 3B1B's Manim tool to create math animations to describe and visualize intricate math topics.
+    \item Videos include topics about polar decomposition and paradoxical probability topics. 
+    \end{bullet-list-minor}
+
+    \project{Recap}{ -- Stanford Hackathon}{February 2020}
+    \begin{bullet-list-minor}
+    \item Created a web application with React, to show local sourced news to a wider audience. 
+    \item With a primary focus on creating an interface that incites discovery. 
+    \end{bullet-list-minor}
+
+    \project{Docker Migration}{ -- Vydia Internship}{ July 2018 -- August 2018}
+	\begin{bullet-list-minor}
+	\item Upgraded the entire teams development environment to use containerization tech. 
+    \item Saves around four hours in onboarding process, and around half hour per developer in daily usage.
+    \end{bullet-list-minor}
+
+    \project{LED Authenticator}{ -- NJ Hackathon}{ May 2018}
+	\begin{bullet-list-minor}
+    \item Hardware device powered by Arduino and Android app to verify logins using AES. 
+    \item Provides a two-step authenticator in a fun way, to encoursage usage. 
+    \end{bullet-list-minor}
+
+    \project{Gofer}{ -- Alpha Product}{ March 2018 - August 2018}
+    \begin{bullet-list-minor}
+    \item Android app for creating a network for local commerce by requesting and completing tasks.
+    \item Needed a way to get stuff from around our town so we created this app to request help from seniors. 
+    \end{bullet-list-minor}
+
+    \project{Mousetrap/Electric Vehicle}{ -- Science Olympiad}{ January 2016 - March 2019}
+    \begin{bullet-list-minor}
+    \item Created the most efficient vehicle with stored potential energy in mousetrap. Placed 3rd in NJ. 
+    \item Used Arduino to control vehicle to accurately drive a programmed distance. Placed 4th in NJ. 
+    \end{bullet-list-minor}
+	
+\vspace*{4pt}%
+\header{Technical Skills}
+    \begin{bullet-list-major}
+    \item Programming languages: \textbf{Python}, \textbf{Java}, JavaScript, Swift, Kotlin, Matlab, LaTeX, HTML/CSS
+    \vspace{2pt}
+    \item Software: Docker, Android Studio, XCode, Git, Unity, Linux, SQL, Tensorflow 
+    \vspace{2pt}
+    \item Other computer experience: MS Office Suite, GSuite, Photography, Adobe Photoshop
+    \vspace{2pt}
+    \item Non-Technical: Agile workflow, experience teaching students, organizing events of 50+ people.
+    \end{bullet-list-major}
+
+\vspace*{4pt}%
+\header{Highlighted Coursework}
+    \begin{bullet-list-major}
+    \item \textbf{Computer Science:} Data Structures and Algorithms, Computer Programs, Android and iOS Development, Linux SysAdmin, Web Design, Designing Information Devices and Systems
+    \item \textbf{Mathematics:} Real Analysis, Abstract Linear Algebra, Discrete Math, Probability Theory, Multivariable Calculus, Differential Equations, Numerical Analysis
+    \end{bullet-list-major}
+
+\vspace*{4pt}%
+\header{Extra Curricular Activities}
+    \begin{bullet-list-major}
+    \item  Volunteer to tutor group of 4-5 students learning discrete math and probability theory, CS 70 at Berkeley. 
+    \item  Social Chair in the Math Undergrad Student Association, hosting events to encourage math community.
+    \end{bullet-list-major}
+
+\end{document}
